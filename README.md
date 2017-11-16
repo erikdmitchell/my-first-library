@@ -1,3 +1,3 @@
-#My first libarary
+# My first libarary
 
-This is my very first library I created at php[world]
+This is my very first library I created at php[world].
