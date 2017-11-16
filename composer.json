@@ -1,12 +1,21 @@
 {
     "name": "erikdmitchell/my_first_library",
-    "description": "Created with composer init",
+    "description": "This is my very first library created with composer init",
+    "keywords": [
+        "erikdmitchell",
+        "my_first_library",
+        "tutorial",
+        "phpworld 2017",
+        "workshop"
+    ],
+    "homepage": "http://www.conquerorsoft.com/my_first_library",    
     "type": "library",
     "require": {
         "php": "^5.6 || ^7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.7"
+        "phpunit/phpunit": "^5.7",
+         "squizlabs/php_codesniffer": "3.*"
     },
     "license": "MIT",
     "authors": [
@@ -14,5 +23,20 @@
             "name": "Erik",
             "email": "erikdmitchell@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "erikdmitchell\\my_first_library\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "erikdmitchell\\my_first_library\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    }    
 }
